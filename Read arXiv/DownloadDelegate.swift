@@ -24,7 +24,7 @@ class DownloadDelegate: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
         
         super.init()
         
-        urlSession = URLSession(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
+        urlSession = URLSession(configuration: config, delegate: self, delegateQueue: nil)
     }
     
     func start() {
@@ -50,7 +50,8 @@ class DownloadDelegate: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
             try FileManager.default.moveItem(at: location, to: savedURL)
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
             print("File downloaded and moved successfully.")
-        } catch _ {
+        } catch let err {
+            print(err)
             print("Failed to move file to documents")
         }
     }

@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        scanForFiles()
         return true
     }
 
@@ -39,6 +40,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func scanForFiles() {
+        let fileManager = FileManager.default
+        var articles: [Article] = []
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            let decoder = JSONDecoder()
+            for file in fileURLs {
+                if file.pathExtension == "json" {
+                    let data = try Data(contentsOf: file)
+                    let article = try decoder.decode(Article.self, from: data)
+                    articles.append(article)
+                }
+            }
+        } catch _ {
+            print("Failed to list files")
+        }
+        
+        for article in articles {
+            let url = documentURL.appendingPathComponent(article.id + ".pdf")
+            if !fileManager.fileExists(atPath: url.path) {
+                DownloadDelegate(identifier: article.id, url: URL(string: "https://arxiv.org/pdf/\(article.id)")!).start()
+            }
+        }
     }
 }
 

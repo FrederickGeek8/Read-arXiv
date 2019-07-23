@@ -58,7 +58,9 @@ class DownloadsTableViewController: UITableViewController {
             }
         }
         
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
