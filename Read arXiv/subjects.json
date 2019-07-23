@@ -1,0 +1,283 @@
+[
+    {
+        "name": "Physics",
+        "areas": [
+            {
+                "code": "astro-ph*",
+                "name": "Astrophysics",
+                "subareas": [
+                    {
+                        "code": "astro-ph.CO",
+                        "name": "Cosmology and Extragalactic Astrophysics"
+                    },
+                    { "code": "astro-ph.EP", "name": "Earth and Planetary Astrophysics" },
+                    { "code": "astro-ph.GA", "name": "Galaxy Astrophysics" },
+                    {
+                        "code": "astro-ph.HE",
+                        "name": "High Energy Astrophysical Phenomena"
+                    },
+                    {
+                        "code": "astro-ph.IM",
+                        "name": "Instrumentation and Methods for Astrophysics"
+                    },
+                    { "code": "astro-ph.SR", "name": "Solar and Stella Astrophysics" }
+                ]
+            },
+            {
+                "code": "cond-mat*",
+                "name": "Condensed Matter Physics",
+                "subareas": [
+                    {
+                        "code": "cond-mat.dis-nn",
+                        "name": "Disordered Systems and Neural Networks"
+                    },
+                    { "code": "cond-mat.mtrl-sci", "name": "Materials Science" },
+                    {
+                        "code": "cond-mat.mes-hall",
+                        "name": "Mesoscale and Nanoscale Physics"
+                    },
+                    { "code": "cond-mat.other", "name": "Other Condensed Matter" },
+                    { "code": "cond-mat.quant-gas", "name": "Quantum Gases" },
+                    { "code": "soft", "name": "Soft Condensed Matter" },
+                    { "code": "cond-mat.stat-mech", "name": "Statistical Mechanics" },
+                    {
+                        "code": "cond-mat.str-el",
+                        "name": "Strongly Correlated Electrons"
+                    },
+                    { "code": "cond-mat.supr-con", "name": "Superconductivity" }
+                ]
+            },
+            { "code": "gr-qc", "name": "General Relativity and Quantum Cosmology" },
+            { "code": "hep-ex", "name": "High Energy Physics - Experiment" },
+            { "code": "hep-lat", "name": "High Energy Physics - Lattice" },
+            { "code": "hep-ph", "name": "High Energy Physics - Phenomenology" },
+            { "code": "hep-th", "name": "High Energy Physics - Theory" },
+            { "code": "math-ph", "name": "Mathematical Physics" },
+            { "code": "nucl-ex", "name": "Nuclear Experiment" },
+            { "code": "nucl-th", "name": "Nuclear Theory" },
+            {
+                "code": "physics*",
+                "name": "Physics",
+                "subareas": [
+                    { "code": "physics.acc-ph", "name": "Accelerator Physics" },
+                    {
+                        "code": "physics.ao-ph",
+                        "name": "Atmospheric and Oceanic Physics"
+                    },
+                    { "code": "physics.atom-ph", "name": "Atomic Physics" },
+                    {
+                        "code": "physics.atm-clus",
+                        "name": "Atomic and Molecular Clusters"
+                    },
+                    { "code": "physics.bio-ph", "name": "Biological Physics" },
+                    { "code": "physics.chem-ph", "name": "Chemical Physics" },
+                    { "code": "physics.class-ph", "name": "Classical Physics" },
+                    { "code": "physics.comp-ph", "name": "Computational Physics" },
+                    {
+                        "code": "physics.data-an",
+                        "name": "Data Analysis, Statistics and Probability"
+                    },
+                    { "code": "physics.flu-dyn", "name": "Fluid Dynamics" },
+                    { "code": "physics.gen-ph", "name": "General Physics" },
+                    { "code": "physics.geo-ph", "name": "Geophysics" },
+                    {
+                        "code": "physics.hist-ph",
+                        "name": "History and Philosophy of Physics"
+                    },
+                    {
+                        "code": "physics.ins-det",
+                        "name": "Instrumentation and Detectors"
+                    },
+                    { "code": "physics.med-ph", "name": "Medical Physics" },
+                    { "code": "physics.optics", "name": "Optics" },
+                    { "code": "physics.ed-ph", "name": "Physics Education" },
+                    { "code": "physics.soc-ph", "name": "Physics and Society" },
+                    { "code": "physics.plasma-ph", "name": "Plasma Physics" },
+                    { "code": "physics.pop-ph", "name": "Popular Physics" },
+                    { "code": "physics.space-ph", "name": "Space Physics" }
+                ]
+            },
+            { "code": "quant-ph", "name": "Quantum Physics" }
+        ]
+    },
+    {
+        "name": "Mathematics",
+        "areas": [
+            {
+                "code": "math*",
+                "name": "Mathematics",
+                "subareas": [
+                    { "code": "math.AG", "name": "Algebraic Geometry" },
+                    { "code": "math.AT", "name": "Algebraic Topology" },
+                    { "code": "math.AP", "name": "Analysis of PDEs" },
+                    { "code": "math.CT", "name": "Category Theory" },
+                    { "code": "math.CA", "name": "Classical Analysis and ODEs" },
+                    { "code": "math.CO", "name": "Combinatorics" },
+                    { "code": "math.AC", "name": "Commutative Algebra" },
+                    { "code": "math.CV", "name": "Complex Variables" },
+                    { "code": "math.DG", "name": "Differential Geometry" },
+                    { "code": "math.DS", "name": "Dynamical Systems" },
+                    { "code": "math.FA", "name": "Functional Analysis" },
+                    { "code": "math.GM", "name": "General Mathematics" },
+                    { "code": "math.GN", "name": "General Topology" },
+                    { "code": "math.GT", "name": "Geometric Topology" },
+                    { "code": "math.GR", "name": "Group Theory" },
+                    { "code": "math.HO", "name": "History and Overview" },
+                    { "code": "math.IT", "name": "Information Theory" },
+                    { "code": "math.KT", "name": "K-Theory and Homology" },
+                    { "code": "math.LO", "name": "Logic" },
+                    { "code": "math.MP", "name": "Mathematical Physics" },
+                    { "code": "math.MG", "name": "Metric Geometry" },
+                    { "code": "math.NT", "name": "Number Theory" },
+                    { "code": "math.NA", "name": "Numerical Analysis" },
+                    { "code": "math.OA", "name": "Operator Algebras" },
+                    { "code": "math.OC", "name": "Optimization and Control" },
+                    { "code": "math.PR", "name": "Probability" },
+                    { "code": "math.QA", "name": "Quantum Algebra" },
+                    { "code": "math.RT", "name": "Representation Theory" },
+                    { "code": "math.RA", "name": "Rings and Algebras" },
+                    { "code": "math.SP", "name": "Spectral Theory" },
+                    { "code": "math.ST", "name": "Statistics Theory" },
+                    { "code": "math.SG", "name": "Symplectic Geometry" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Nonlinear Sciences",
+        "areas": [
+            {
+                "code": "nlin*",
+                "name": "Nonlinear Sciences",
+                "subareas": [
+                    {
+                        "code": "nlin.AO",
+                        "name": "Adaptation and Self-Organizing Systems"
+                    },
+                    { "code": "nlin.CG", "name": "Cellular Automata and Lattice Gases" },
+                    { "code": "nlin.CD", "name": "Chaotic Dynamics" },
+                    {
+                        "code": "nlin.SI",
+                        "name": "Exactly Solvable and Integrable Systems"
+                    },
+                    { "code": "nlin.PS", "name": "Pattern Formation and Solitons" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Computer Science",
+        "areas": [
+            {
+                "code": "cs*",
+                "name": "Computer Research Repository",
+                "subareas": [
+                    { "code": "cs.AI", "name": "Artificial Intelligence" },
+                    { "code": "cs.CL", "name": "Computation and Language" },
+                    { "code": "cs.CC", "name": "Computation Complexity" },
+                    {
+                        "code": "cs.CE",
+                        "name": "Computation Engineering, Finance and Science"
+                    },
+                    { "code": "cs.CG", "name": "Computational Geometry" },
+                    { "code": "cs.GT", "name": "Computer Science and Game Theory" },
+                    {
+                        "code": "cs.CV",
+                        "name": "Computer Vision and Pattern Recognition"
+                    },
+                    { "code": "cs.CY", "name": "Computers and Society" },
+                    { "code": "cs.CR", "name": "Cryptography and Security" },
+                    { "code": "cs.DS", "name": "Data Structures and Algorithms" },
+                    { "code": "cs.DB", "name": "Databases" },
+                    { "code": "cs.DL", "name": "Digital Libraries" },
+                    { "code": "cs.DM", "name": "Discrete Mathematics" },
+                    {
+                        "code": "cs.DC",
+                        "name": "Distributed, Parallel, and Cluster Computing"
+                    },
+                    { "code": "cs.ET", "name": "Emerging Technologies" },
+                    { "code": "cs.FL", "name": "Formal Languages and Automata Theory" },
+                    { "code": "cs.GL", "name": "General Literature" },
+                    { "code": "cs.GR", "name": "Graphics" },
+                    { "code": "cs.AR", "name": "Hardware Architecture" },
+                    { "code": "cs.HC", "name": "Human-Computer Interaction" },
+                    { "code": "cs.IR", "name": "Information Retrieval" },
+                    { "code": "cs.LG", "name": "Learning" },
+                    { "code": "cs.LO", "name": "Logic in Computer Science" },
+                    { "code": "cs.MS", "name": "Mathematical Software" },
+                    { "code": "cs.MA", "name": "Multiagent Systems" },
+                    { "code": "cs.MM", "name": "Multimedia" },
+                    { "code": "cs.NI", "name": "Networking and Internet Architecture" },
+                    { "code": "cs.NE", "name": "Neural and Evolutionary Computing" },
+                    { "code": "cs.NA", "name": "Numerical Analysis" },
+                    { "code": "cs.OS", "name": "Operating System" },
+                    { "code": "cs.OH", "name": "Other Computer Science" },
+                    { "code": "cs.PF", "name": "Performance" },
+                    { "code": "cs.PL", "name": "Programming Languages" },
+                    { "code": "cs.RO", "name": "Robotics" },
+                    { "code": "cs.SI", "name": "Social and Information Networks" },
+                    { "code": "cs.SE", "name": "Software Engineering" },
+                    { "code": "cs.SD", "name": "Sound" },
+                    { "code": "cs.SC", "name": "Symbolic Computation" },
+                    { "code": "cs.SY", "name": "Systems and Control" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quantitative Biology",
+        "areas": [
+            {
+                "code": "q-bio*",
+                "name": "Quantitative Biology",
+                "subareas": [
+                    { "code": "q-bio.BM", "name": "Biomolecules" },
+                    { "code": "q-bio.CB", "name": "Cell Behavior" },
+                    { "code": "q-bio.GN", "name": "Genomics" },
+                    { "code": "q-bio.MN", "name": "Molecular Networks" },
+                    { "code": "q-bio.NC", "name": "Neurons and Cognition" },
+                    { "code": "q-bio.OT", "name": "Other Quatitative Biology" },
+                    { "code": "q-bio.PE", "name": "Populations and Evolution" },
+                    { "code": "q-bio.QM", "name": "Quantitative Methods" },
+                    { "code": "q-bio.SC", "name": "Subcellular Processes" },
+                    { "code": "q-bio.TO", "name": "Tissues and Organs" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Quantitative Finance",
+        "areas": [
+            {
+                "code": "q-fin*",
+                "name": "Quantitative Finance",
+                "subareas": [
+                    { "code": "q-fin.CP", "name": "Computational Finance" },
+                    { "code": "q-fin.GN", "name": "General Finance" },
+                    { "code": "q-fin.PM", "name": "Portfolio Management" },
+                    { "code": "q-fin.PR", "name": "Pricing of Securities" },
+                    { "code": "q-fin.RM", "name": "Risk Management" },
+                    { "code": "q-fin.ST", "name": "Statistical Finance" },
+                    { "code": "q-fin.TR", "name": "Trading and Market Microstructure" }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Statistics",
+        "areas": [
+            {
+                "code": "stat*",
+                "name": "Statistics",
+                "subareas": [
+                    { "code": "stat.AP", "name": "Applications" },
+                    { "code": "stat.CO", "name": "Computation" },
+                    { "code": "stat.ML", "name": "Machine Learning" },
+                    { "code": "stat.ME", "name": "Methodology" },
+                    { "code": "stat.OT", "name": "Other Statistics" },
+                    { "code": "stat.TH", "name": "Statistics Theory" }
+                ]
+            }
+        ]
+    }
+]
