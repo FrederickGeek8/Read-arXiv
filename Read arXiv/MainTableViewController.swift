@@ -97,7 +97,11 @@ class MainTableViewController: UITableViewController {
                     query += "cat:" + part + "+OR+"
                 }
             }
-            query = query[..<query.index(query.endIndex, offsetBy: -4)] + "+AND+"
+            
+            if query != "" {
+                query = query[..<query.index(query.endIndex, offsetBy: -4)] + "+AND+"
+            }
+            
             
             let api = URL(string: "https://export.arxiv.org/api/query?search_query=\(query)lastUpdatedDate:[\(start)+TO+\(end)]&max_results=800")
             print(api)
