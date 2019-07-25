@@ -94,9 +94,10 @@ class MainTableViewController: UITableViewController {
             for pair in subscriptions {
                 let value = pair.value as! [String]
                 for part in value {
-                    query += "cat:" + part + "+AND+"
+                    query += "cat:" + part + "+OR+"
                 }
             }
+            query = query[..<query.index(query.endIndex, offsetBy: -4)] + "+AND+"
             
             let api = URL(string: "https://export.arxiv.org/api/query?search_query=\(query)lastUpdatedDate:[\(start)+TO+\(end)]&max_results=800")
             print(api)
