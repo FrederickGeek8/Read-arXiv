@@ -8,6 +8,7 @@
 
 import UIKit
 import FeedKit
+import WebKit
 
 class ArticleViewController: UIViewController {
     var article: AtomFeedEntry?
@@ -18,17 +19,21 @@ class ArticleViewController: UIViewController {
     var bookmarked: Bool = false
     var bookmarkBtn: UIButton?
     
-    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleAuthors: UILabel!
-    @IBOutlet weak var articleDescription: UILabel!
+    @IBOutlet weak var articleDescription: WKWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if article_2 != nil {
             bookmarked = true
             self.articleTitle.text = article_2?.title
-            self.articleDescription.text = article_2?.description
+            
+            let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;}</style></head><body><p class='mathjax'>\(article_2!.description)</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
+            
+            articleDescription.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
+            
+//            self.articleDescription.text = article_2?.description
             self.articleAuthors.text = article_2?.authors
             self.pdf = URL(string: "https://arxiv.org/pdf/\(article_2!.id)")
             
@@ -44,12 +49,14 @@ class ArticleViewController: UIViewController {
             updateBookmarkIcon()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bookmarkBtn!)
             
-            scrollView.contentOffset = CGPoint(x: 0, y: scrollView.contentOffset.y)
             return
         }
         
+        let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;}</style></head><body><p class='mathjax'>\(article?.summary?.value ?? "")</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
+        
+        articleDescription.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
         self.articleTitle.text = article?.title
-        self.articleDescription.text = article?.summary?.value
+//        self.articleDescription.text = article?.summary?.value
         
         var authors = ""
         let raw_authors = article?.authors ?? []

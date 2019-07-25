@@ -174,50 +174,38 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xeb-5r-x2i">
-                                <rect key="frame" x="20" y="185" width="374" height="21"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vji-ac-jQg">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="UNd-Ue-bhh"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
+                            <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-FD-7bE">
+                                <rect key="frame" x="20" y="185" width="375" height="41"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="Vji-ac-jQg" firstAttribute="top" secondItem="Xeb-5r-x2i" secondAttribute="top" id="Bxb-fc-FIV"/>
-                                    <constraint firstItem="Vji-ac-jQg" firstAttribute="width" secondItem="Xeb-5r-x2i" secondAttribute="width" id="YWt-LC-JGY"/>
-                                    <constraint firstAttribute="trailing" secondItem="Vji-ac-jQg" secondAttribute="trailing" id="cyV-Au-SyB"/>
-                                    <constraint firstItem="Vji-ac-jQg" firstAttribute="leading" secondItem="Xeb-5r-x2i" secondAttribute="leading" id="eNq-ln-rv0"/>
-                                    <constraint firstItem="Vji-ac-jQg" firstAttribute="centerX" secondItem="Xeb-5r-x2i" secondAttribute="centerX" id="pXn-F6-cZR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="x1T-qm-V3p"/>
-                                    <constraint firstAttribute="bottom" secondItem="Vji-ac-jQg" secondAttribute="bottom" id="z8f-tq-Q2P"/>
+                                    <constraint firstAttribute="width" constant="375" id="GGX-5x-NXA"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="HQs-jj-ZJZ"/>
                                 </constraints>
-                            </scrollView>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="centerX" secondItem="nyj-NF-W5d" secondAttribute="centerX" id="9IA-gp-0zA"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="centerX" secondItem="Xfc-Rc-Txz" secondAttribute="centerX" id="Cr7-ER-PWc"/>
-                            <constraint firstItem="KSA-75-wtd" firstAttribute="trailing" secondItem="Xeb-5r-x2i" secondAttribute="trailing" constant="20" id="EGe-FJ-XzJ"/>
-                            <constraint firstItem="Xeb-5r-x2i" firstAttribute="leading" secondItem="KSA-75-wtd" secondAttribute="leading" constant="20" id="F6b-tG-8zD"/>
-                            <constraint firstItem="EAQ-ac-59r" firstAttribute="top" secondItem="Xeb-5r-x2i" secondAttribute="bottom" constant="7" id="GKs-GG-wKp"/>
+                            <constraint firstItem="Mul-FD-7bE" firstAttribute="top" secondItem="Xfc-Rc-Txz" secondAttribute="bottom" constant="8" id="LSY-yv-1aM"/>
                             <constraint firstItem="EAQ-ac-59r" firstAttribute="centerX" secondItem="KSA-75-wtd" secondAttribute="centerX" id="OQg-Up-JRD"/>
                             <constraint firstItem="Xfc-Rc-Txz" firstAttribute="top" secondItem="nyj-NF-W5d" secondAttribute="bottom" constant="8" id="QM7-Tx-B7G"/>
+                            <constraint firstItem="KSA-75-wtd" firstAttribute="trailing" secondItem="Mul-FD-7bE" secondAttribute="trailing" constant="19" id="Z8r-q2-CN7"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EAQ-ac-59r" secondAttribute="bottom" constant="30" id="ZTq-Pl-9Fa"/>
-                            <constraint firstItem="Xeb-5r-x2i" firstAttribute="top" secondItem="Xfc-Rc-Txz" secondAttribute="bottom" constant="29" id="bW5-Wr-Q0f"/>
                             <constraint firstItem="nyj-NF-W5d" firstAttribute="top" secondItem="KSA-75-wtd" secondAttribute="top" constant="25" id="str-iA-RcA"/>
+                            <constraint firstItem="EAQ-ac-59r" firstAttribute="top" secondItem="Mul-FD-7bE" secondAttribute="bottom" constant="8" id="u05-f0-pEO"/>
+                            <constraint firstItem="Mul-FD-7bE" firstAttribute="leading" secondItem="KSA-75-wtd" secondAttribute="leading" constant="20" id="uth-mT-frq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSA-75-wtd"/>
                     </view>
                     <connections>
                         <outlet property="articleAuthors" destination="Xfc-Rc-Txz" id="OsR-cW-2BQ"/>
-                        <outlet property="articleDescription" destination="Vji-ac-jQg" id="hSP-zL-Icx"/>
+                        <outlet property="articleDescription" destination="Mul-FD-7bE" id="dHZ-JX-xpD"/>
                         <outlet property="articleTitle" destination="nyj-NF-W5d" id="YrI-js-Pd4"/>
-                        <outlet property="scrollView" destination="Xeb-5r-x2i" id="7RA-Vn-vc3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fw-X4-gC3" userLabel="First Responder" sceneMemberID="firstResponder"/>

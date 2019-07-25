@@ -13,6 +13,8 @@
 		B6631A0D22E0CC8600CA70BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6631A0B22E0CC8600CA70BF /* Main.storyboard */; };
 		B6631A0F22E0CC8700CA70BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B6631A0E22E0CC8700CA70BF /* Assets.xcassets */; };
 		B6631A1222E0CC8700CA70BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6631A1022E0CC8700CA70BF /* LaunchScreen.storyboard */; };
+		B66B0F7422E9A767000A1C42 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = B66B0F7322E9A767000A1C42 /* MathJax */; };
+		B66BFE8722E99B71000A1C42 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66BFE8622E99B71000A1C42 /* WebKit.framework */; };
 		B6A2929922E18F9A00F9991E /* SubareaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */; };
 		B6B176FD22E17A6B0054212F /* subjects.json in Resources */ = {isa = PBXBuildFile; fileRef = B6B176FC22E17A6B0054212F /* subjects.json */; };
 		B6C06FD322E1A32D001D7CAB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */; };
@@ -32,6 +34,8 @@
 		B6631A0E22E0CC8700CA70BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B6631A1122E0CC8700CA70BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B6631A1322E0CC8700CA70BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B66B0F7322E9A767000A1C42 /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
+		B66BFE8622E99B71000A1C42 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubareaTableViewController.swift; sourceTree = "<group>"; };
 		B6B176FC22E17A6B0054212F /* subjects.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = subjects.json; sourceTree = "<group>"; };
 		B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66BFE8722E99B71000A1C42 /* WebKit.framework in Frameworks */,
 				A6710813CFD6FF33F055732F /* Pods_Read_arXiv.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -57,6 +62,7 @@
 		ACB8378EF9DBF6981F8A451A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B66BFE8622E99B71000A1C42 /* WebKit.framework */,
 				DDAAE671191D7ACC67D457A1 /* Pods_Read_arXiv.framework */,
 			);
 			name = Frameworks;
@@ -94,6 +100,7 @@
 				B6C06FD622E20122001D7CAB /* PDFViewController.swift */,
 				B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */,
 				B6631A0E22E0CC8700CA70BF /* Assets.xcassets */,
+				B66B0F7322E9A767000A1C42 /* MathJax */,
 				B6631A1022E0CC8700CA70BF /* LaunchScreen.storyboard */,
 				B6631A1322E0CC8700CA70BF /* Info.plist */,
 			);
@@ -170,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B66B0F7422E9A767000A1C42 /* MathJax in Resources */,
 				B6B176FD22E17A6B0054212F /* subjects.json in Resources */,
 				B6631A1222E0CC8700CA70BF /* LaunchScreen.storyboard in Resources */,
 				B6631A0F22E0CC8700CA70BF /* Assets.xcassets in Resources */,
