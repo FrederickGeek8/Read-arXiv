@@ -103,7 +103,7 @@ class MainTableViewController: UITableViewController {
             }
             
             
-            let api = URL(string: "https://export.arxiv.org/api/query?search_query=\(query)lastUpdatedDate:[\(start)+TO+\(end)]&max_results=800")
+            let api = URL(string: "https://export.arxiv.org/api/query?search_query=\(query)lastUpdatedDate:[\(start)+TO+\(end)]&sortBy=lastUpdatedDate&max_results=800")
             print(api)
             let parser = FeedParser(URL: api!)
             
