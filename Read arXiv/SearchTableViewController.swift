@@ -30,7 +30,7 @@ class SearchTableViewController: UITableViewController {
         searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        self.title = "Search"
+        navigationItem.title = "Search"
         definesPresentationContext = true
     }
 
@@ -102,7 +102,7 @@ extension SearchTableViewController: UISearchBarDelegate {
         let query = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)?.replacingOccurrences(of: "%20", with: "+")
         
         
-        let api = URL(string: "https://export.arxiv.org/api/query?search_query=ti:%22\(query!)%22&sortBy=relevance&max_results=100")
+        let api = URL(string: "https://export.arxiv.org/api/query?search_query=ti:\(query!)&sortBy=relevance&max_results=100")
         print(api)
         let parser = FeedParser(URL: api!)
         
