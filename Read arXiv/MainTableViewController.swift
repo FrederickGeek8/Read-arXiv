@@ -112,11 +112,13 @@ class MainTableViewController: UITableViewController {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                     self.indicatortoTitle()
+                    self.tableView.scroll(to: .top, animated: true)
                 }
                 
             }
         } else {
             indicatortoTitle()
+            self.tableView.scroll(to: .top, animated: true)
         }
     }
     
