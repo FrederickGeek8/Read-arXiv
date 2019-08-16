@@ -7,4 +7,5 @@ target 'Read arXiv' do
 
   # Pods for Read arXiv
   pod 'FeedKit', '~> 8.1'
+  pod 'SyncKit/CoreData', '~> 0.7.5'
 end

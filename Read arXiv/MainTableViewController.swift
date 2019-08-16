@@ -73,7 +73,7 @@ class MainTableViewController: UITableViewController {
             authors += (author.name ?? "") + " "
         }
         
-        cell.detailTextLabel?.text = authors
+        cell.detailTextLabel?.text = authors.truncate(length: 200)
         cell.detailTextLabel?.numberOfLines = 0
         
         cell.accessoryType = .disclosureIndicator

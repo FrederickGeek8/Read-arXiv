@@ -1,16 +1,22 @@
 PODS:
   - FeedKit (8.1.1)
+  - SyncKit/Core (0.7.5)
+  - SyncKit/CoreData (0.7.5):
+    - SyncKit/Core
 
 DEPENDENCIES:
   - FeedKit (~> 8.1)
+  - SyncKit/CoreData (~> 0.7.5)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FeedKit
+    - SyncKit
 
 SPEC CHECKSUMS:
   FeedKit: 3418eed25f0b493b205b4de1b8511ac21d413fa9
+  SyncKit: 7fc5a00c7cd708c2b8473940f4624def8bdc11ac
 
-PODFILE CHECKSUM: aa2a589249150bf2b96d4b821a6aca639ff5be28
+PODFILE CHECKSUM: 93144cb5125741c589657bbd0accb16072e955d9
 
 COCOAPODS: 1.7.2

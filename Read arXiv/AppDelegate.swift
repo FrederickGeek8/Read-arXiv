@@ -17,8 +17,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        scanForFiles()
+        SyncKitManager.shared.sync { (error) in
+            if error != nil {
+                print("Error: \(error!)")
+            }
+            self.scanForFiles()
+        }
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        SyncKitManager.shared.sync { (error) in
+            if error != nil {
+                print("Error: \(error!)")
+            }
+            self.scanForFiles()
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -51,21 +65,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        var fileURLs: [URL] = []
         
         do {
             records = try managedContext.fetch(fetchRequest)
+            fileURLs = try fileManager.contentsOfDirectory(at: documentURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
         } catch let error {
             print("Error: \(error)")
         }
         
-        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        var files = fileURLs.map({ (url) -> String in
+            return url.deletingPathExtension().lastPathComponent
+        })
         
         for article in records {
             let id = article.value(forKey: "articleID") as! String
             let url = documentURL.appendingPathComponent(id + ".pdf")
             if !fileManager.fileExists(atPath: url.path) {
                 DownloadDelegate(identifier: id, url: URL(string: "https://arxiv.org/pdf/\(id)")!).start()
+            } else {
+                files.remove(at: files.firstIndex(of: id)!)
+            }
+        }
+        
+        for file in files {
+            let url = documentURL.appendingPathComponent(file + ".pdf")
+            
+            do {
+                try fileManager.removeItem(at: url)
+            } catch let error {
+                print("Error: \(error)")
             }
         }
     }

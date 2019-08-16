@@ -45,7 +45,7 @@ class DownloadsTableViewController: UITableViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
         
         do {
             records = try managedContext.fetch(fetchRequest)

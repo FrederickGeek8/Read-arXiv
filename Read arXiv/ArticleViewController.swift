@@ -120,7 +120,7 @@ class ArticleViewController: UIViewController {
         if bookmarked {
             // delete bookmark
             let pdfFileURL = url.appendingPathComponent(documentURL + ".pdf")
-            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
             fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
             
             do {
@@ -136,9 +136,15 @@ class ArticleViewController: UIViewController {
             
             pdfFile = nil
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            SyncKitManager.shared.sync { (error) in
+                if error != nil {
+                    print("Error: \(error!)")
+                }
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            }
         } else {
             // download bookmark
-            let entity = NSEntityDescription.entity(forEntityName: "Bookmark", in: managedContext)!
+            let entity = NSEntityDescription.entity(forEntityName: "Bookmarks", in: managedContext)!
             
             let record = NSManagedObject(entity: entity, insertInto: managedContext)
             
@@ -154,6 +160,12 @@ class ArticleViewController: UIViewController {
             }
             
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            SyncKitManager.shared.sync { (error) in
+                if error != nil {
+                    print("Error: \(error!)")
+                }
+                NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            }
             DownloadDelegate.init(identifier: documentURL, url: self.pdf!).start()
         }
         
@@ -175,7 +187,7 @@ class ArticleViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
         fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
         
         do {

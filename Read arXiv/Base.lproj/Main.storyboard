@@ -168,6 +168,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-Rc-Txz">
                                 <rect key="frame" x="20" y="156" width="374" height="21"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="4uZ-LJ-pN7"/>
                                     <constraint firstAttribute="width" constant="374" id="NgO-KL-HU0"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="x9v-zu-9ZG"/>
                                 </constraints>

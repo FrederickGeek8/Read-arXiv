@@ -17,12 +17,16 @@
 		B66B0F7422E9A767000A1C42 /* MathJax in Resources */ = {isa = PBXBuildFile; fileRef = B66B0F7322E9A767000A1C42 /* MathJax */; };
 		B66BFE8722E99B71000A1C42 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66BFE8622E99B71000A1C42 /* WebKit.framework */; };
 		B683830022F493F1002567A2 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68382FF22F493F1002567A2 /* SearchTableViewController.swift */; };
+		B69E12A02306CB2200F1F522 /* Bookmarks+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E129E2306CB2200F1F522 /* Bookmarks+CoreDataClass.swift */; };
+		B69E12A12306CB2200F1F522 /* Bookmarks+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69E129F2306CB2200F1F522 /* Bookmarks+CoreDataProperties.swift */; };
 		B6A2929922E18F9A00F9991E /* SubareaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */; };
 		B6B176FD22E17A6B0054212F /* subjects.json in Resources */ = {isa = PBXBuildFile; fileRef = B6B176FC22E17A6B0054212F /* subjects.json */; };
 		B6C06FD322E1A32D001D7CAB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */; };
 		B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */; };
 		B6C06FD722E20122001D7CAB /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD622E20122001D7CAB /* PDFViewController.swift */; };
 		B6E182FD2306AE3800115EC6 /* Bookmarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FB2306AE3800115EC6 /* Bookmarks.xcdatamodeld */; };
+		B6E182FF2306BCFF00115EC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FE2306BCFF00115EC6 /* StringExtension.swift */; };
+		B6E183012306BF7C00115EC6 /* SyncKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E183002306BF7C00115EC6 /* SyncKitManager.swift */; };
 		B6F5AFB222E4414F002AEAD1 /* DownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */; };
 		B6F5AFB422E45D59002AEAD1 /* DownloadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,12 +46,16 @@
 		B66B0F7322E9A767000A1C42 /* MathJax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MathJax; sourceTree = "<group>"; };
 		B66BFE8622E99B71000A1C42 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		B68382FF22F493F1002567A2 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		B69E129E2306CB2200F1F522 /* Bookmarks+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmarks+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B69E129F2306CB2200F1F522 /* Bookmarks+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmarks+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubareaTableViewController.swift; sourceTree = "<group>"; };
 		B6B176FC22E17A6B0054212F /* subjects.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = subjects.json; sourceTree = "<group>"; };
 		B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B6C06FD622E20122001D7CAB /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B6E182FC2306AE3800115EC6 /* Bookmarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmarks.xcdatamodel; sourceTree = "<group>"; };
+		B6E182FE2306BCFF00115EC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B6E183002306BF7C00115EC6 /* SyncKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncKitManager.swift; sourceTree = "<group>"; };
 		B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDelegate.swift; sourceTree = "<group>"; };
 		B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsTableViewController.swift; sourceTree = "<group>"; };
 		DDAAE671191D7ACC67D457A1 /* Pods_Read_arXiv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_arXiv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +106,12 @@
 		B6631A0622E0CC8600CA70BF /* Read arXiv */ = {
 			isa = PBXGroup;
 			children = (
+				B69E129E2306CB2200F1F522 /* Bookmarks+CoreDataClass.swift */,
+				B69E129F2306CB2200F1F522 /* Bookmarks+CoreDataProperties.swift */,
 				B6631A0722E0CC8600CA70BF /* AppDelegate.swift */,
+				B6E183002306BF7C00115EC6 /* SyncKitManager.swift */,
 				B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */,
+				B6E182FE2306BCFF00115EC6 /* StringExtension.swift */,
 				B636DF202306871200583F11 /* Read arXiv.entitlements */,
 				B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */,
 				B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */,
@@ -164,6 +176,9 @@
 					B6631A0322E0CC8600CA70BF = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -277,11 +292,15 @@
 				B6F5AFB222E4414F002AEAD1 /* DownloadDelegate.swift in Sources */,
 				B6E182FD2306AE3800115EC6 /* Bookmarks.xcdatamodeld in Sources */,
 				B6A2929922E18F9A00F9991E /* SubareaTableViewController.swift in Sources */,
+				B69E12A12306CB2200F1F522 /* Bookmarks+CoreDataProperties.swift in Sources */,
+				B69E12A02306CB2200F1F522 /* Bookmarks+CoreDataClass.swift in Sources */,
 				B6F5AFB422E45D59002AEAD1 /* DownloadsTableViewController.swift in Sources */,
 				B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */,
 				B6C06FD722E20122001D7CAB /* PDFViewController.swift in Sources */,
 				B6631A0A22E0CC8600CA70BF /* SubscriptionViewController.swift in Sources */,
+				B6E182FF2306BCFF00115EC6 /* StringExtension.swift in Sources */,
 				B6631A0822E0CC8600CA70BF /* AppDelegate.swift in Sources */,
+				B6E183012306BF7C00115EC6 /* SyncKitManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
