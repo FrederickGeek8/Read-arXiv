@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 struct Article: Decodable {
     var title: String
@@ -28,41 +29,53 @@ class DownloadsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         self.navigationItem.title = "Bookmarks"
-        scanForFiles()
-        NotificationCenter.default.addObserver(self, selector: #selector(scanForFiles), name: .init(rawValue: "documentsChanged"), object: nil)
+        
+        populate()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(populate), name: .init(rawValue: "documentsChanged"), object: nil)
+        
     }
     
     @objc
-    func scanForFiles() {
-        let fileManager = FileManager.default
-        articles = []
-        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        do {
-            let fileURLs = try fileManager.contentsOfDirectory(at: documentURL, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-            let decoder = JSONDecoder()
-            for file in fileURLs {
-                if file.pathExtension == "json" {
-                    let data = try Data(contentsOf: file)
-                    let article = try decoder.decode(Article.self, from: data)
-                    articles.append((article, false))
-                }
-            }
-        } catch _ {
-            print("Failed to list files")
+    func populate() {
+        var records: [NSManagedObject] = []
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
         }
         
-        for i in 0..<articles.count {
-            let url = documentURL.appendingPathComponent(articles[i].article.id + ".pdf")
-            if fileManager.fileExists(atPath: url.path) {
-                articles[i].access = true
-            }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+        
+        do {
+            records = try managedContext.fetch(fetchRequest)
+        } catch let error {
+            print("Error: \(error)")
         }
+        
+        let fileManager = FileManager.default
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        
+        self.articles = records.map({ (record) -> (Article, Bool) in
+            let title = record.value(forKey: "articleTitle") as! String
+            let description = record.value(forKey: "articleDescription") as! String
+            let id = record.value(forKey: "articleID") as! String
+            let authors = record.value(forKey: "articleAuthors") as! String
+            var access = false
+            
+            let url = documentURL.appendingPathComponent(id + ".pdf")
+            if fileManager.fileExists(atPath: url.path) {
+                access = true
+            }
+            
+            return (Article(title: title, description: description, authors: authors, id: id), access)
+        })
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
-
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

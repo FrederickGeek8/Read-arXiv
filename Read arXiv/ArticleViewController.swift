@@ -9,6 +9,7 @@
 import UIKit
 import FeedKit
 import WebKit
+import CoreData
 
 class ArticleViewController: UIViewController {
     var article: AtomFeedEntry?
@@ -108,41 +109,52 @@ class ArticleViewController: UIViewController {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let url = URL(fileURLWithPath: path)
-        let pathComponent = url.appendingPathComponent(documentURL + ".json")
-        let filePath = pathComponent.path
         let fileManager = FileManager.default
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
         
         if bookmarked {
             // delete bookmark
             let pdfFileURL = url.appendingPathComponent(documentURL + ".pdf")
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+            fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
+            
             do {
-                print(filePath)
-                try fileManager.removeItem(atPath: filePath)
                 try fileManager.removeItem(atPath: pdfFileURL.path)
+                if let result = try? managedContext.fetch(fetchRequest) {
+                    for object in result {
+                        managedContext.delete(object)
+                    }
+                }
             } catch _ {
                 print("Failed to remove bookmark.")
             }
+            
             pdfFile = nil
             NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
         } else {
             // download bookmark
-            let data = [
-                "title": article?.title,
-                "authors": articleAuthors.text,
-                "description": article?.summary?.value,
-                "id": documentURL
-            ]
+            let entity = NSEntityDescription.entity(forEntityName: "Bookmark", in: managedContext)!
+            
+            let record = NSManagedObject(entity: entity, insertInto: managedContext)
+            
+            record.setValue(article?.title, forKey: "articleTitle")
+            record.setValue(articleAuthors.text, forKey: "articleAuthors")
+            record.setValue(article?.summary?.value, forKey: "articleDescription")
+            record.setValue(documentURL, forKey: "articleID")
             
             do {
-                let json = try JSONSerialization.data(withJSONObject: data, options: .init())
-                fileManager.createFile(atPath: filePath, contents: json, attributes: nil)
-            } catch _ {
-                print("There was an error saving article metadata.")
-                return
+                try managedContext.save()
+            } catch let error {
+                print("Error: \(error)")
             }
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
             
-            DownloadDelegate.init(identifier: documentURL, url: pdf!).start()
+            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            DownloadDelegate.init(identifier: documentURL, url: self.pdf!).start()
         }
         
         bookmarked = !bookmarked
@@ -156,18 +168,23 @@ class ArticleViewController: UIViewController {
         
         let documentURL = (pdf?.lastPathComponent)!
         
-        
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let url = URL(fileURLWithPath: path)
-        let pathComponent = url.appendingPathComponent(documentURL + ".json")
-        let filePath = pathComponent.path
-        let fileManager = FileManager.default
-        
-        if fileManager.fileExists(atPath: filePath) {
-            return true
+        var records: [NSManagedObject] = []
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
         }
         
-        return false
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmark")
+        fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
+        
+        do {
+            records = try managedContext.fetch(fetchRequest)
+        } catch let error {
+            print("Error: \(error)")
+        }
+        
+        return records.count > 0
     }
     
     // MARK: - Navigation

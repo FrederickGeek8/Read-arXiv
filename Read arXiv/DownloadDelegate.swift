@@ -37,8 +37,6 @@ class DownloadDelegate: NSObject, URLSessionDelegate, URLSessionDownloadDelegate
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let err = error {
             print("Error: \(err.localizedDescription)")
-        } else {
-            print("Error. Giving up")
         }
     }
     

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6710813CFD6FF33F055732F /* Pods_Read_arXiv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAAE671191D7ACC67D457A1 /* Pods_Read_arXiv.framework */; };
+		B636DF222306872800583F11 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B636DF212306872800583F11 /* CloudKit.framework */; };
 		B6631A0822E0CC8600CA70BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6631A0722E0CC8600CA70BF /* AppDelegate.swift */; };
 		B6631A0A22E0CC8600CA70BF /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6631A0922E0CC8600CA70BF /* SubscriptionViewController.swift */; };
 		B6631A0D22E0CC8600CA70BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6631A0B22E0CC8600CA70BF /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		B6C06FD322E1A32D001D7CAB /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */; };
 		B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */; };
 		B6C06FD722E20122001D7CAB /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD622E20122001D7CAB /* PDFViewController.swift */; };
+		B6E182FD2306AE3800115EC6 /* Bookmarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FB2306AE3800115EC6 /* Bookmarks.xcdatamodeld */; };
 		B6F5AFB222E4414F002AEAD1 /* DownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */; };
 		B6F5AFB422E45D59002AEAD1 /* DownloadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		0AD19DBCFEB6CC17DF5C9D81 /* Pods-Read arXiv.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read arXiv.release.xcconfig"; path = "Target Support Files/Pods-Read arXiv/Pods-Read arXiv.release.xcconfig"; sourceTree = "<group>"; };
 		575C39F95D83AE35C18B6271 /* Pods-Read arXiv.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Read arXiv.debug.xcconfig"; path = "Target Support Files/Pods-Read arXiv/Pods-Read arXiv.debug.xcconfig"; sourceTree = "<group>"; };
+		B636DF202306871200583F11 /* Read arXiv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Read arXiv.entitlements"; sourceTree = "<group>"; };
+		B636DF212306872800583F11 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		B6631A0422E0CC8600CA70BF /* Read arXiv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Read arXiv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6631A0722E0CC8600CA70BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6631A0922E0CC8600CA70BF /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 		B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B6C06FD622E20122001D7CAB /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
+		B6E182FC2306AE3800115EC6 /* Bookmarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmarks.xcdatamodel; sourceTree = "<group>"; };
 		B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDelegate.swift; sourceTree = "<group>"; };
 		B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsTableViewController.swift; sourceTree = "<group>"; };
 		DDAAE671191D7ACC67D457A1 /* Pods_Read_arXiv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Read_arXiv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B636DF222306872800583F11 /* CloudKit.framework in Frameworks */,
 				B66BFE8722E99B71000A1C42 /* WebKit.framework in Frameworks */,
 				A6710813CFD6FF33F055732F /* Pods_Read_arXiv.framework in Frameworks */,
 			);
@@ -64,6 +70,7 @@
 		ACB8378EF9DBF6981F8A451A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B636DF212306872800583F11 /* CloudKit.framework */,
 				B66BFE8622E99B71000A1C42 /* WebKit.framework */,
 				DDAAE671191D7ACC67D457A1 /* Pods_Read_arXiv.framework */,
 			);
@@ -91,16 +98,18 @@
 		B6631A0622E0CC8600CA70BF /* Read arXiv */ = {
 			isa = PBXGroup;
 			children = (
+				B6631A0722E0CC8600CA70BF /* AppDelegate.swift */,
+				B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */,
+				B636DF202306871200583F11 /* Read arXiv.entitlements */,
 				B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */,
 				B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */,
-				B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */,
-				B6631A0722E0CC8600CA70BF /* AppDelegate.swift */,
-				B6631A0922E0CC8600CA70BF /* SubscriptionViewController.swift */,
+				B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */,
+				B68382FF22F493F1002567A2 /* SearchTableViewController.swift */,
+				B6C06FD622E20122001D7CAB /* PDFViewController.swift */,
+				B6E182FB2306AE3800115EC6 /* Bookmarks.xcdatamodeld */,
 				B6B176FC22E17A6B0054212F /* subjects.json */,
 				B6631A0B22E0CC8600CA70BF /* Main.storyboard */,
-				B68382FF22F493F1002567A2 /* SearchTableViewController.swift */,
-				B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */,
-				B6C06FD622E20122001D7CAB /* PDFViewController.swift */,
+				B6631A0922E0CC8600CA70BF /* SubscriptionViewController.swift */,
 				B6A2929822E18F9A00F9991E /* SubareaTableViewController.swift */,
 				B6631A0E22E0CC8700CA70BF /* Assets.xcassets */,
 				B66B0F7322E9A767000A1C42 /* MathJax */,
@@ -154,6 +163,14 @@
 				TargetAttributes = {
 					B6631A0322E0CC8600CA70BF = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -258,6 +275,7 @@
 				B6C06FD322E1A32D001D7CAB /* MainTableViewController.swift in Sources */,
 				B683830022F493F1002567A2 /* SearchTableViewController.swift in Sources */,
 				B6F5AFB222E4414F002AEAD1 /* DownloadDelegate.swift in Sources */,
+				B6E182FD2306AE3800115EC6 /* Bookmarks.xcdatamodeld in Sources */,
 				B6A2929922E18F9A00F9991E /* SubareaTableViewController.swift in Sources */,
 				B6F5AFB422E45D59002AEAD1 /* DownloadsTableViewController.swift in Sources */,
 				B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */,
@@ -410,6 +428,7 @@
 			baseConfigurationReference = 575C39F95D83AE35C18B6271 /* Pods-Read arXiv.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Read arXiv/Read arXiv.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DA4RFE7AJ;
 				INFOPLIST_FILE = "Read arXiv/Info.plist";
@@ -429,6 +448,7 @@
 			baseConfigurationReference = 0AD19DBCFEB6CC17DF5C9D81 /* Pods-Read arXiv.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Read arXiv/Read arXiv.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9DA4RFE7AJ;
 				INFOPLIST_FILE = "Read arXiv/Info.plist";
@@ -465,6 +485,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B6E182FB2306AE3800115EC6 /* Bookmarks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B6E182FC2306AE3800115EC6 /* Bookmarks.xcdatamodel */,
+			);
+			currentVersion = B6E182FC2306AE3800115EC6 /* Bookmarks.xcdatamodel */;
+			path = Bookmarks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B66319FC22E0CC8600CA70BF /* Project object */;
 }
