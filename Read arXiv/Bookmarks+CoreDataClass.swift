@@ -14,6 +14,6 @@ import SyncKit
 @objc(Bookmarks)
 public class Bookmarks: NSManagedObject, PrimaryKey {
     public static func primaryKey() -> String {
-        return "Bookmarks"
+        return "articleID"
     }
 }

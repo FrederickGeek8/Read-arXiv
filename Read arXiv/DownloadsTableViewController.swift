@@ -39,39 +39,41 @@ class DownloadsTableViewController: UITableViewController {
     @objc
     func populate() {
         var records: [NSManagedObject] = []
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
-        
-        do {
-            records = try managedContext.fetch(fetchRequest)
-        } catch let error {
-            print("Error: \(error)")
-        }
-        
-        let fileManager = FileManager.default
-        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        
-        self.articles = records.map({ (record) -> (Article, Bool) in
-            let title = record.value(forKey: "articleTitle") as! String
-            let description = record.value(forKey: "articleDescription") as! String
-            let id = record.value(forKey: "articleID") as! String
-            let authors = record.value(forKey: "articleAuthors") as! String
-            var access = false
-            
-            let url = documentURL.appendingPathComponent(id + ".pdf")
-            if fileManager.fileExists(atPath: url.path) {
-                access = true
-            }
-            
-            return (Article(title: title, description: description, authors: authors, id: id), access)
-        })
         
         DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                return
+            }
+        
+        
+            let managedContext = appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
+            
+            do {
+                records = try managedContext.fetch(fetchRequest)
+            } catch let error {
+                print("Error: \(error)")
+            }
+            
+            let fileManager = FileManager.default
+            let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            
+            self.articles = records.map({ (record) -> (Article, Bool) in
+                let title = record.value(forKey: "articleTitle") as! String
+                let description = record.value(forKey: "articleDescription") as! String
+                let id = record.value(forKey: "articleID") as! String
+                let authors = record.value(forKey: "articleAuthors") as! String
+                var access = false
+                
+                let url = documentURL.appendingPathComponent(id + ".pdf")
+                if fileManager.fileExists(atPath: url.path) {
+                    access = true
+                }
+                
+                return (Article(title: title, description: description, authors: authors, id: id), access)
+            })
+                
             self.tableView.reloadData()
         }
     }
