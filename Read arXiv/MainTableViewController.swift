@@ -44,6 +44,9 @@ class MainTableViewController: UITableViewController {
         
         let (start, end) = getDatePair(delta: dateDelta)
         updateSubscriptions(start: start, end: end)
+        
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(refresh), for: .valueChanged)
     }
 
     // MARK: - Table view data source
@@ -194,6 +197,11 @@ class MainTableViewController: UITableViewController {
         dateDelta = prevDay(delta: dateDelta)
         let (start, end) = getDatePair(delta: dateDelta)
         titleButton.setTitle(displayDate(delta: dateDelta), for: .normal)
+        updateSubscriptions(start: start, end: end)
+    }
+    
+    @objc func refresh() {
+        let (start, end) = getDatePair(delta: dateDelta)
         updateSubscriptions(start: start, end: end)
     }
 
