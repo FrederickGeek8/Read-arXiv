@@ -99,15 +99,15 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5aL-e6-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Iur-3C-r79" customClass="CalendarViewController" customModule="Read_arXiv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1IZ-rS-Rb3">
-                        <rect key="frame" x="0.0" y="0.0" width="362" height="362"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3V-q8-yiQ" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="5" width="362" height="362"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V3V-q8-yiQ" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="362" id="WAQ-P6-ULB"/>
-                                    <constraint firstAttribute="width" constant="362" id="ncb-VX-ys8"/>
+                                    <constraint firstAttribute="height" constant="300" id="WAQ-P6-ULB"/>
+                                    <constraint firstAttribute="width" constant="300" id="ncb-VX-ys8"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
@@ -121,14 +121,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aXz-DJ-FaV"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="362" height="362"/>
-                    <size key="freeformSize" width="362" height="362"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <size key="freeformSize" width="300" height="300"/>
                     <connections>
                         <outlet property="calendar" destination="V3V-q8-yiQ" id="ju2-u5-uD9"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2457.971014492754" y="-435.26785714285711"/>
+            <point key="canvasLocation" x="2461" y="-169"/>
         </scene>
         <!--Main Table View Controller-->
         <scene sceneID="v8b-1q-qpB">
@@ -160,10 +160,10 @@
                                 <action selector="regressDate:" destination="3MX-Pz-YF7" id="7GY-S4-Moa"/>
                             </connections>
                         </barButtonItem>
-                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nVK-yg-rJy">
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nVK-yg-rJy">
                             <rect key="frame" x="154.5" y="7" width="105" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <state key="normal" title="Recent Articles">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
