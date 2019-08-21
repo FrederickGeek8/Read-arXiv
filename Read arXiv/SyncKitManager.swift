@@ -34,6 +34,11 @@ class SyncKitManager {
     }
     
     func sync(_ callback: @escaping ((Error?) -> ())) {
-        synchronizer?.synchronize(completion: callback)
+        if synchronizer == nil {
+            callback(nil)
+            return
+        }
+        
+        synchronizer!.synchronize(completion: callback)
     }
 }
