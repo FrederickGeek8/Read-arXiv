@@ -200,7 +200,7 @@
                                 <rect key="frame" x="19.5" y="113" width="375" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="0Os-5D-gbD"/>
-                                    <constraint firstAttribute="width" constant="375" id="AP3-JX-5Wn"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="AP3-JX-5Wn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
                                 <nil key="textColor"/>
@@ -221,7 +221,7 @@
                                 <rect key="frame" x="20" y="156" width="374" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="4uZ-LJ-pN7"/>
-                                    <constraint firstAttribute="width" constant="374" id="NgO-KL-HU0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="NgO-KL-HU0"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="x9v-zu-9ZG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
