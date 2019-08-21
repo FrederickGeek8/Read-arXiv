@@ -16,6 +16,8 @@ class MainTableViewController: UITableViewController {
     var indicator = UIActivityIndicatorView()
     var titleView: UIView?
     
+    @IBOutlet weak var titleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,7 +32,8 @@ class MainTableViewController: UITableViewController {
             dateDelta = nextDay(delta: dateDelta)
         }
         
-        self.title = displayDate(delta: dateDelta)
+        titleButton.setTitle(displayDate(delta: dateDelta), for: .normal)
+        
         UserDefaults.standard.addObserver(self, forKeyPath: "subscriptions", options: .new, context: nil)
         
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - ((self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height)))
@@ -182,7 +185,7 @@ class MainTableViewController: UITableViewController {
         if nextDay(delta: dateDelta) < -1 {
             dateDelta = nextDay(delta: dateDelta)
             let (start, end) = getDatePair(delta: dateDelta)
-            self.title = displayDate(delta: dateDelta)
+            titleButton.setTitle(displayDate(delta: dateDelta), for: .normal)
             updateSubscriptions(start: start, end: end)
         }
     }
@@ -190,7 +193,7 @@ class MainTableViewController: UITableViewController {
     @IBAction func regressDate(_ sender: Any) {
         dateDelta = prevDay(delta: dateDelta)
         let (start, end) = getDatePair(delta: dateDelta)
-        self.title = displayDate(delta: dateDelta)
+        titleButton.setTitle(displayDate(delta: dateDelta), for: .normal)
         updateSubscriptions(start: start, end: end)
     }
 
@@ -203,6 +206,21 @@ class MainTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         if let dest = segue.destination as? ArticleViewController {
             dest.article = selectedArticle
+        } else if segue.identifier == "viewCalendar" {
+            // Center the popover
+            let controller = segue.destination.popoverPresentationController
+            let rect = controller?.sourceRect
+            print(rect)
+            controller?.sourceRect = CGRect(x: (self.navigationItem.titleView?.bounds.width)! / 2, y: (self.navigationItem.titleView?.bounds.height)!, width: rect!.width, height: rect!.height)
+            controller?.delegate = self
+            
+            let dest = segue.destination as! CalendarViewController
+            dest.callback = { result in
+                self.dateDelta = result
+                let (start, end) = self.getDatePair(delta: self.dateDelta)
+                self.titleButton.setTitle(self.displayDate(delta: self.dateDelta), for: .normal)
+                self.updateSubscriptions(start: start, end: end)
+            }
         }
     }
     
@@ -211,4 +229,10 @@ class MainTableViewController: UITableViewController {
         updateSubscriptions(start: start, end: end)
     }
 
+}
+
+extension MainTableViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
 }

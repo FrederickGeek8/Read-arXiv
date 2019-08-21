@@ -93,7 +93,44 @@
             </objects>
             <point key="canvasLocation" x="2461" y="963"/>
         </scene>
-        <!--Recent Articles-->
+        <!--Calendar View Controller-->
+        <scene sceneID="ifc-j5-1TE">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aL-e6-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Iur-3C-r79" customClass="CalendarViewController" customModule="Read_arXiv" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1IZ-rS-Rb3">
+                        <rect key="frame" x="0.0" y="0.0" width="362" height="362"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3V-q8-yiQ" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="5" width="362" height="362"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="WAQ-P6-ULB"/>
+                                    <constraint firstAttribute="width" constant="362" id="ncb-VX-ys8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="aXz-DJ-FaV" firstAttribute="centerY" secondItem="V3V-q8-yiQ" secondAttribute="centerY" id="Z3X-TE-H8k"/>
+                            <constraint firstItem="V3V-q8-yiQ" firstAttribute="centerX" secondItem="aXz-DJ-FaV" secondAttribute="centerX" id="kgg-fW-mVE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aXz-DJ-FaV"/>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="362" height="362"/>
+                    <size key="freeformSize" width="362" height="362"/>
+                    <connections>
+                        <outlet property="calendar" destination="V3V-q8-yiQ" id="ju2-u5-uD9"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2457.971014492754" y="-435.26785714285711"/>
+        </scene>
+        <!--Main Table View Controller-->
         <scene sceneID="v8b-1q-qpB">
             <objects>
                 <tableViewController id="3MX-Pz-YF7" customClass="MainTableViewController" customModule="Read_arXiv" customModuleProvider="target" sceneMemberID="viewController">
@@ -116,12 +153,26 @@
                             <outlet property="delegate" destination="3MX-Pz-YF7" id="CSl-fv-T5a"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Recent Articles" id="4fI-DF-Pv4">
+                    <navigationItem key="navigationItem" id="4fI-DF-Pv4">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="◀" id="dyU-mq-7tN">
                             <connections>
                                 <action selector="regressDate:" destination="3MX-Pz-YF7" id="7GY-S4-Moa"/>
                             </connections>
                         </barButtonItem>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nVK-yg-rJy">
+                            <rect key="frame" x="154.5" y="7" width="105" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <state key="normal" title="Recent Articles">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <segue destination="Iur-3C-r79" kind="popoverPresentation" identifier="viewCalendar" popoverAnchorView="nVK-yg-rJy" id="dcb-BO-y9S">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
+                                </segue>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="▶" id="miP-gp-xYW">
                             <connections>
                                 <action selector="progressDate:" destination="3MX-Pz-YF7" id="uGP-a5-TJe"/>
@@ -129,12 +180,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="titleButton" destination="nVK-yg-rJy" id="fnX-yS-V26"/>
                         <segue destination="9fr-uR-K7H" kind="show" identifier="articleView" id="6jG-SJ-uIC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BfC-qr-PxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2462" y="311"/>
+            <point key="canvasLocation" x="2461" y="317"/>
         </scene>
         <!--Article View Controller-->
         <scene sceneID="1T1-2A-qaZ">
@@ -358,6 +410,6 @@
         <image name="Subscription" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="deL-TL-iaw"/>
+        <segue reference="6jG-SJ-uIC"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -130,6 +130,7 @@ class ArticleViewController: UIViewController {
                         managedContext.delete(object)
                     }
                 }
+                try managedContext.save()
             } catch _ {
                 print("Failed to remove bookmark.")
             }
