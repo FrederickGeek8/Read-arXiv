@@ -50,6 +50,8 @@ class ArticleViewController: UIViewController {
             updateBookmarkIcon()
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bookmarkBtn!)
             
+            NotificationCenter.default.addObserver(self, selector: #selector(recheckBookmark), name: .init(rawValue: "documentsChanged"), object: nil)
+            
             return
         }
         
@@ -88,6 +90,8 @@ class ArticleViewController: UIViewController {
         updateBookmarkIcon()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bookmarkBtn!)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(recheckBookmark), name: .init(rawValue: "documentsChanged"), object: nil)
     }
     
     func updateBookmarkIcon() {
@@ -169,9 +173,6 @@ class ArticleViewController: UIViewController {
             }
             DownloadDelegate.init(identifier: documentURL, url: self.pdf!).start()
         }
-        
-        bookmarked = !bookmarked
-        updateBookmarkIcon()
     }
     
     func bookmarkExists() -> Bool {
@@ -198,6 +199,13 @@ class ArticleViewController: UIViewController {
         }
         
         return records.count > 0
+    }
+    
+    @objc func recheckBookmark() {
+        DispatchQueue.main.async {
+            self.bookmarked = self.bookmarkExists()
+            self.updateBookmarkIcon()
+        }
     }
     
     // MARK: - Navigation
