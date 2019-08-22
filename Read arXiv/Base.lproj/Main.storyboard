@@ -96,7 +96,6 @@
         <!--Calendar View Controller-->
         <scene sceneID="ifc-j5-1TE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5aL-e6-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Iur-3C-r79" customClass="CalendarViewController" customModule="Read_arXiv" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1IZ-rS-Rb3">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -127,6 +126,7 @@
                         <outlet property="calendar" destination="V3V-q8-yiQ" id="ju2-u5-uD9"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5aL-e6-GQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2461" y="-169"/>
         </scene>
@@ -235,7 +235,8 @@
                                     <constraint firstAttribute="width" constant="375" id="GGX-5x-NXA"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="HQs-jj-ZJZ"/>
                                 </constraints>
-                                <wkWebViewConfiguration key="configuration">
+                                <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
+                                    <dataDetectorTypes key="dataDetectorTypes"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
