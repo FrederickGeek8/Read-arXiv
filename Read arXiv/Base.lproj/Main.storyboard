@@ -197,10 +197,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyj-NF-W5d">
-                                <rect key="frame" x="19.5" y="113" width="375" height="35"/>
+                                <rect key="frame" x="5" y="113" width="404" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="0Os-5D-gbD"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="AP3-JX-5Wn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="29"/>
                                 <nil key="textColor"/>
@@ -218,10 +217,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfc-Rc-Txz">
-                                <rect key="frame" x="20" y="156" width="374" height="21"/>
+                                <rect key="frame" x="5" y="156" width="404" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="4uZ-LJ-pN7"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="NgO-KL-HU0"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="x9v-zu-9ZG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -229,31 +227,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-FD-7bE">
-                                <rect key="frame" x="20" y="185" width="375" height="41"/>
+                                <rect key="frame" x="19" y="185" width="376" height="41"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="GGX-5x-NXA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="GGX-5x-NXA"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="HQs-jj-ZJZ"/>
                                 </constraints>
                                 <wkWebViewConfiguration key="configuration" allowsAirPlayForMediaPlayback="NO" allowsPictureInPictureMediaPlayback="NO">
-                                    <dataDetectorTypes key="dataDetectorTypes"/>
+                                    <dataDetectorTypes key="dataDetectorTypes" none="YES"/>
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-hC-jdk">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Xfc-Rc-Txz" firstAttribute="width" secondItem="u6c-PO-CFs" secondAttribute="width" constant="-10" id="4HI-P1-B56"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="centerX" secondItem="nyj-NF-W5d" secondAttribute="centerX" id="9IA-gp-0zA"/>
+                            <constraint firstItem="TZN-hC-jdk" firstAttribute="centerY" secondItem="u6c-PO-CFs" secondAttribute="centerY" id="Awt-XM-5ej"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="centerX" secondItem="Xfc-Rc-Txz" secondAttribute="centerX" id="Cr7-ER-PWc"/>
                             <constraint firstItem="Mul-FD-7bE" firstAttribute="top" secondItem="Xfc-Rc-Txz" secondAttribute="bottom" constant="8" id="LSY-yv-1aM"/>
                             <constraint firstItem="EAQ-ac-59r" firstAttribute="centerX" secondItem="KSA-75-wtd" secondAttribute="centerX" id="OQg-Up-JRD"/>
                             <constraint firstItem="Xfc-Rc-Txz" firstAttribute="top" secondItem="nyj-NF-W5d" secondAttribute="bottom" constant="8" id="QM7-Tx-B7G"/>
+                            <constraint firstItem="nyj-NF-W5d" firstAttribute="width" secondItem="u6c-PO-CFs" secondAttribute="width" constant="-10" id="TjU-7X-qK8"/>
+                            <constraint firstItem="TZN-hC-jdk" firstAttribute="centerX" secondItem="u6c-PO-CFs" secondAttribute="centerX" id="XnC-wK-hxX"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="trailing" secondItem="Mul-FD-7bE" secondAttribute="trailing" constant="19" id="Z8r-q2-CN7"/>
                             <constraint firstItem="KSA-75-wtd" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="EAQ-ac-59r" secondAttribute="bottom" constant="30" id="ZTq-Pl-9Fa"/>
                             <constraint firstItem="nyj-NF-W5d" firstAttribute="top" secondItem="KSA-75-wtd" secondAttribute="top" constant="25" id="str-iA-RcA"/>
                             <constraint firstItem="EAQ-ac-59r" firstAttribute="top" secondItem="Mul-FD-7bE" secondAttribute="bottom" constant="8" id="u05-f0-pEO"/>
-                            <constraint firstItem="Mul-FD-7bE" firstAttribute="leading" secondItem="KSA-75-wtd" secondAttribute="leading" constant="20" id="uth-mT-frq"/>
+                            <constraint firstItem="Mul-FD-7bE" firstAttribute="leading" secondItem="KSA-75-wtd" secondAttribute="leading" constant="19" id="uth-mT-frq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KSA-75-wtd"/>
                     </view>
@@ -261,6 +266,7 @@
                         <outlet property="articleAuthors" destination="Xfc-Rc-Txz" id="OsR-cW-2BQ"/>
                         <outlet property="articleDescription" destination="Mul-FD-7bE" id="dHZ-JX-xpD"/>
                         <outlet property="articleTitle" destination="nyj-NF-W5d" id="YrI-js-Pd4"/>
+                        <outlet property="descriptionLoading" destination="TZN-hC-jdk" id="We6-hR-iKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fw-X4-gC3" userLabel="First Responder" sceneMemberID="firstResponder"/>

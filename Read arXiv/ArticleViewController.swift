@@ -23,8 +23,11 @@ class ArticleViewController: UIViewController {
     @IBOutlet weak var articleTitle: UILabel!
     @IBOutlet weak var articleAuthors: UILabel!
     @IBOutlet weak var articleDescription: WKWebView!
+    @IBOutlet weak var descriptionLoading: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        articleDescription.navigationDelegate = self
         
         if article_2 != nil {
             bookmarked = true
@@ -227,4 +230,11 @@ class ArticleViewController: UIViewController {
     }
     
 
+}
+
+extension ArticleViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("Finished loading")
+        descriptionLoading.stopAnimating()
+    }
 }
