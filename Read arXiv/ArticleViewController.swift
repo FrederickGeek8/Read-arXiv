@@ -51,7 +51,10 @@ class ArticleViewController: UIViewController {
             bookmarkBtn = UIButton(type: .custom)
             bookmarkBtn?.addTarget(self, action: #selector(bookmarkArticle), for: .touchUpInside)
             updateBookmarkIcon()
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bookmarkBtn!)
+            
+            let shareBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
+            
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: bookmarkBtn!), shareBtn]
             
             NotificationCenter.default.addObserver(self, selector: #selector(recheckBookmark), name: .init(rawValue: "documentsChanged"), object: nil)
             
@@ -92,17 +95,42 @@ class ArticleViewController: UIViewController {
         bookmarkBtn?.addTarget(self, action: #selector(bookmarkArticle), for: .touchUpInside)
         updateBookmarkIcon()
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: bookmarkBtn!)
+        let shareBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareArticle))
+        
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: bookmarkBtn!), shareBtn]
         
         NotificationCenter.default.addObserver(self, selector: #selector(recheckBookmark), name: .init(rawValue: "documentsChanged"), object: nil)
     }
     
     func updateBookmarkIcon() {
         if bookmarked {
-            bookmarkBtn!.setBackgroundImage(UIImage(named: "Bookmark"), for: .normal)
+            bookmarkBtn!.setImage(UIImage(named: "Bookmark")?.maskWithColor(color: self.view.tintColor), for: .normal)
         } else {
-            bookmarkBtn!.setBackgroundImage(UIImage(named: "Bookmark Border"), for: .normal)
+            bookmarkBtn!.setImage(UIImage(named: "Bookmark Border")?.maskWithColor(color: self.view.tintColor), for: .normal)
         }
+    }
+    
+    @objc
+    func shareArticle(sender: UIView) {
+        let url: URL?
+        if article_2 != nil {
+            url = URL(string: "https://arxiv.org/abs/" + self.article_2!.id)
+        } else {
+            url = URL(string: article!.id!)
+        }
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [url], applicationActivities: nil)
+        
+        // This lines is for the popover you need to show in iPad
+        activityViewController.popoverPresentationController?.sourceView = sender
+        
+        // This line remove the arrow of the popover to show in iPad
+        activityViewController.popoverPresentationController?.permittedArrowDirections = .any
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+        
+        // Anything you want to exclude
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     @objc
@@ -131,13 +159,13 @@ class ArticleViewController: UIViewController {
             fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
             
             do {
-                try fileManager.removeItem(atPath: pdfFileURL.path)
                 if let result = try? managedContext.fetch(fetchRequest) {
                     for object in result {
                         managedContext.delete(object)
                     }
                 }
                 try managedContext.save()
+                try fileManager.removeItem(atPath: pdfFileURL.path)
             } catch _ {
                 print("Failed to remove bookmark.")
             }

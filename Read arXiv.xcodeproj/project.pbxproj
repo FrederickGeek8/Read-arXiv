@@ -27,7 +27,7 @@
 		B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */; };
 		B6C06FD722E20122001D7CAB /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C06FD622E20122001D7CAB /* PDFViewController.swift */; };
 		B6E182FD2306AE3800115EC6 /* Bookmarks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FB2306AE3800115EC6 /* Bookmarks.xcdatamodeld */; };
-		B6E182FF2306BCFF00115EC6 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FE2306BCFF00115EC6 /* StringExtension.swift */; };
+		B6E182FF2306BCFF00115EC6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E182FE2306BCFF00115EC6 /* Extensions.swift */; };
 		B6E183012306BF7C00115EC6 /* SyncKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E183002306BF7C00115EC6 /* SyncKitManager.swift */; };
 		B6F5AFB222E4414F002AEAD1 /* DownloadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */; };
 		B6F5AFB422E45D59002AEAD1 /* DownloadsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */; };
@@ -58,7 +58,7 @@
 		B6C06FD422E1F2A3001D7CAB /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		B6C06FD622E20122001D7CAB /* PDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
 		B6E182FC2306AE3800115EC6 /* Bookmarks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bookmarks.xcdatamodel; sourceTree = "<group>"; };
-		B6E182FE2306BCFF00115EC6 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		B6E182FE2306BCFF00115EC6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B6E183002306BF7C00115EC6 /* SyncKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncKitManager.swift; sourceTree = "<group>"; };
 		B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDelegate.swift; sourceTree = "<group>"; };
 		B6F5AFB322E45D59002AEAD1 /* DownloadsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsTableViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +115,7 @@
 				B6631A0722E0CC8600CA70BF /* AppDelegate.swift */,
 				B6E183002306BF7C00115EC6 /* SyncKitManager.swift */,
 				B6F5AFB122E4414F002AEAD1 /* DownloadDelegate.swift */,
-				B6E182FE2306BCFF00115EC6 /* StringExtension.swift */,
+				B6E182FE2306BCFF00115EC6 /* Extensions.swift */,
 				B636DF202306871200583F11 /* Read arXiv.entitlements */,
 				B6C06FD222E1A32D001D7CAB /* MainTableViewController.swift */,
 				B67A714A230DA2DB009D02B3 /* CalendarViewController.swift */,
@@ -306,7 +306,7 @@
 				B6C06FD522E1F2A3001D7CAB /* ArticleViewController.swift in Sources */,
 				B6C06FD722E20122001D7CAB /* PDFViewController.swift in Sources */,
 				B6631A0A22E0CC8600CA70BF /* SubscriptionViewController.swift in Sources */,
-				B6E182FF2306BCFF00115EC6 /* StringExtension.swift in Sources */,
+				B6E182FF2306BCFF00115EC6 /* Extensions.swift in Sources */,
 				B6631A0822E0CC8600CA70BF /* AppDelegate.swift in Sources */,
 				B6E183012306BF7C00115EC6 /* SyncKitManager.swift in Sources */,
 			);
