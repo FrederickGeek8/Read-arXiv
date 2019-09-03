@@ -111,7 +111,7 @@ class ArticleViewController: UIViewController {
     }
     
     @objc
-    func shareArticle(sender: UIView) {
+    func shareArticle(_ sender: UIBarButtonItem) {
         let url: URL?
         if article_2 != nil {
             url = URL(string: "https://arxiv.org/abs/" + self.article_2!.id)
@@ -122,14 +122,11 @@ class ArticleViewController: UIViewController {
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [url], applicationActivities: nil)
         
-        // This lines is for the popover you need to show in iPad
-        activityViewController.popoverPresentationController?.sourceView = sender
-        
-        // This line remove the arrow of the popover to show in iPad
+
+        activityViewController.popoverPresentationController?.barButtonItem = sender        
         activityViewController.popoverPresentationController?.permittedArrowDirections = .any
         activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
-        
-        // Anything you want to exclude
+
         self.present(activityViewController, animated: true, completion: nil)
     }
     
