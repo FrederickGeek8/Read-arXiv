@@ -33,7 +33,7 @@ class ArticleViewController: UIViewController {
             bookmarked = true
             self.articleTitle.text = article_2?.title
             
-            let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;}</style></head><body><p class='mathjax'>\(article_2!.description)</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
+            let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;} @media (prefers-color-scheme: dark){body{background:black;color:white;}}</style></head><body><p class='mathjax'>\(article_2!.description)</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
             
             articleDescription.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
             
@@ -61,7 +61,7 @@ class ArticleViewController: UIViewController {
             return
         }
         
-        let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;}</style></head><body><p class='mathjax'>\(article?.summary?.value ?? "")</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
+        let html = "<html><head><meta name='viewport' content='initial-scale=1.0'/><style>p{white-space:initial !important;}@media (prefers-color-scheme: dark){body{background:black;color:white;}}</style></head><body><p class='mathjax'>\(article?.summary?.value ?? "")</p><script type='text/x-mathjax-config'>MathJax.Hub.Config({messageStyle: 'none',extensions: ['tex2jax.js'],jax: ['input/TeX','output/HTML-CSS'],tex2jax: {  inlineMath: [['$','$']],  processEscapes: true,  ignoreClass: '.*',  processClass: 'mathjax.*',},TeX: {  extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js'],  noErrors: {    inlineDelimiters: ['$','$'],    multiLine: true }}       }); </script><script src='MathJax/MathJax.js'></script></body></html>"
         
         articleDescription.loadHTMLString(html, baseURL: Bundle.main.resourceURL)
         self.articleTitle.text = article?.title
@@ -168,7 +168,7 @@ class ArticleViewController: UIViewController {
             }
             
             pdfFile = nil
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
+            
             SyncKitManager.shared.sync { (error) in
                 if error != nil {
                     print("Error: \(error!)")
@@ -192,7 +192,6 @@ class ArticleViewController: UIViewController {
                 print("Error: \(error)")
             }
             
-            NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "documentsChanged")))
             SyncKitManager.shared.sync { (error) in
                 if error != nil {
                     print("Error: \(error!)")
