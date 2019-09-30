@@ -237,7 +237,7 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-hC-jdk">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="TZN-hC-jdk">
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -279,19 +279,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMq-mU-TMj" customClass="PDFView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hMq-mU-TMj" customClass="PDFView">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-uo-527">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="0Jy-uo-527">
                                 <rect key="frame" x="197" y="440.5" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="hMq-mU-TMj" firstAttribute="bottom" secondItem="aQ5-3j-fzg" secondAttribute="bottom" id="9LT-eh-VSd"/>
+                            <constraint firstItem="hMq-mU-TMj" firstAttribute="top" secondItem="aQ5-3j-fzg" secondAttribute="top" id="DM9-5Y-gy2"/>
                             <constraint firstItem="aQ5-3j-fzg" firstAttribute="centerY" secondItem="0Jy-uo-527" secondAttribute="centerY" id="ENU-kn-Yyd"/>
+                            <constraint firstItem="hMq-mU-TMj" firstAttribute="leading" secondItem="aQ5-3j-fzg" secondAttribute="leading" id="Qmz-KX-sla"/>
                             <constraint firstItem="aQ5-3j-fzg" firstAttribute="centerX" secondItem="0Jy-uo-527" secondAttribute="centerX" id="Ut3-Ea-wX1"/>
+                            <constraint firstItem="hMq-mU-TMj" firstAttribute="trailing" secondItem="aQ5-3j-fzg" secondAttribute="trailing" id="mLi-Ks-0AV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aQ5-3j-fzg"/>
                     </view>
@@ -415,6 +418,6 @@
         <image name="Subscription" width="27" height="27"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6jG-SJ-uIC"/>
+        <segue reference="Hkr-kl-QUJ"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -37,7 +37,12 @@ class MainTableViewController: UITableViewController {
         UserDefaults.standard.addObserver(self, forKeyPath: "subscriptions", options: .new, context: nil)
         
         indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - ((self.navigationController?.navigationBar.frame.height)! + UIApplication.shared.statusBarFrame.height)))
-        indicator.style = .gray
+        if #available(iOS 13.0, *) {
+            indicator.style = .medium
+        } else {
+            // Fallback on earlier versions
+            indicator.style = .gray
+        }
         indicator.hidesWhenStopped = true
         
         titleView = self.navigationItem.titleView

@@ -19,11 +19,21 @@ class PDFViewController: UIViewController {
         super.viewDidLoad()
         
         if pdfurl != nil {
-            DispatchQueue.main.async {
-                let document = PDFDocument(url: self.pdfurl!)
-                self.pdfView.document = document
-                self.loadingIndicator.stopAnimating()
-            }
+            
+                URLSession.shared.dataTask(with: self.pdfurl!) { (data, res, err) in
+                    if err != nil {
+                        let alert = UIAlertController(title: "Error", message: "There was an error while trying to load the PDF.", preferredStyle: .alert)
+                        self.present(alert, animated: true)
+                        return
+                    }
+                    DispatchQueue.main.async {
+                        let document = PDFDocument(data: data!)
+                        self.pdfView.document = document
+                        self.loadingIndicator.stopAnimating()
+                    }
+                }.resume()
+                
+            
         }
         pdfView.autoScales = true
         // Do any additional setup after loading the view.
