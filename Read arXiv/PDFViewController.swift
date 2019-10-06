@@ -11,12 +11,14 @@ import PDFKit
 
 class PDFViewController: UIViewController {
     var pdfurl: URL?
+    var pdfData: Data?
     
     @IBOutlet weak var pdfView: PDFView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         
         if pdfurl != nil {
             
@@ -27,6 +29,7 @@ class PDFViewController: UIViewController {
                         return
                     }
                     DispatchQueue.main.async {
+                        self.pdfData = data
                         let document = PDFDocument(data: data!)
                         self.pdfView.document = document
                         self.loadingIndicator.stopAnimating()
@@ -35,8 +38,30 @@ class PDFViewController: UIViewController {
                 
             
         }
+    
         pdfView.autoScales = true
-        // Do any additional setup after loading the view.
+        
+        
+        let shareBtn = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(sharePDF))
+        self.navigationItem.rightBarButtonItem = shareBtn
+    }
+    
+    @objc
+    func sharePDF(_ sender: UIBarButtonItem) {
+        if pdfData == nil {
+            return
+        }
+        
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [self.pdfData!], applicationActivities: nil)
+        
+
+        activityViewController.popoverPresentationController?.barButtonItem = sender
+        activityViewController.popoverPresentationController?.permittedArrowDirections = .any
+        activityViewController.popoverPresentationController?.sourceRect = CGRect(x: 150, y: 150, width: 0, height: 0)
+
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
 

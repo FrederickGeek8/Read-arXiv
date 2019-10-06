@@ -226,7 +226,7 @@
                             </label>
                             <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mul-FD-7bE">
                                 <rect key="frame" x="19" y="185" width="376" height="41"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="375" id="GGX-5x-NXA"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="HQs-jj-ZJZ"/>
