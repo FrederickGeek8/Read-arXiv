@@ -86,7 +86,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if !fileManager.fileExists(atPath: url.path) {
                 DownloadDelegate(identifier: id, url: URL(string: "https://arxiv.org/pdf/\(id)")!).start()
             } else {
-                files.remove(at: files.firstIndex(of: id)!)
+                if files.firstIndex(of: id) != nil {
+                    files.remove(at: files.firstIndex(of: id)!)
+                }
+                
             }
         }
         
