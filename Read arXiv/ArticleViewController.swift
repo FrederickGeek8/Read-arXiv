@@ -151,6 +151,8 @@ class ArticleViewController: UIViewController {
         
         if bookmarked {
             // delete bookmark
+            self.bookmarked = false
+            updateBookmarkIcon()
             let pdfFileURL = url.appendingPathComponent(documentURL + ".pdf")
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Bookmarks")
             fetchRequest.predicate = NSPredicate(format: "articleID==%@", documentURL)
@@ -177,6 +179,8 @@ class ArticleViewController: UIViewController {
             }
         } else {
             // download bookmark
+            self.bookmarked = false
+            updateBookmarkIcon()
             let entity = NSEntityDescription.entity(forEntityName: "Bookmarks", in: managedContext)!
             
             let record = NSManagedObject(entity: entity, insertInto: managedContext)
