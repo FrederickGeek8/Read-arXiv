@@ -105,7 +105,7 @@ extension SearchTableViewController: UISearchBarDelegate {
         let query = searchBar.text?.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)?.replacingOccurrences(of: "%20", with: "+")
         
         let api = URL(string: "https://export.arxiv.org/api/query?search_query=ti:\(query!)&sortBy=relevance&max_results=100")
-        print(api)
+        print(api as Any)
         let parser = FeedParser(URL: api!)
         
         searchController?.searchBar.isLoading = true

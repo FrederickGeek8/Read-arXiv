@@ -115,7 +115,7 @@ class MainTableViewController: UITableViewController {
             
             
             let api = URL(string: "https://export.arxiv.org/api/query?search_query=\(query)lastUpdatedDate:[\(start)+TO+\(end)]&sortBy=lastUpdatedDate&max_results=800")
-            print(api)
+            print(api as Any)
             let parser = FeedParser(URL: api!)
             
             parser.parseAsync(queue: DispatchQueue.global(qos: .userInitiated)) { (result) in
@@ -223,7 +223,7 @@ class MainTableViewController: UITableViewController {
             // Center the popover
             let controller = segue.destination.popoverPresentationController
             let rect = controller?.sourceRect
-            print(rect)
+            print(rect as Any)
             controller?.sourceRect = CGRect(x: (self.navigationItem.titleView?.bounds.width)! / 2, y: (self.navigationItem.titleView?.bounds.height)!, width: rect!.width, height: rect!.height)
             controller?.delegate = self
             

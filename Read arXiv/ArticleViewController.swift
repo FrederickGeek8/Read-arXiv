@@ -120,7 +120,7 @@ class ArticleViewController: UIViewController {
         }
         
         let activityViewController : UIActivityViewController = UIActivityViewController(
-            activityItems: [url], applicationActivities: nil)
+            activityItems: [url as Any], applicationActivities: nil)
         
 
         activityViewController.popoverPresentationController?.barButtonItem = sender        

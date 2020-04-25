@@ -22,7 +22,7 @@ class SyncKitManager {
         
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        synchronizer = CloudKitSynchronizer.privateSynchronizer(containerName: "iCloud.net.nerd.Read-arXiv", managedObjectContext: appDelegate.persistentContainer.viewContext)
+        synchronizer = CloudKitSynchronizer.privateSynchronizer(containerName: "iCloud.net.nerd.Read-arXiv.iOS", managedObjectContext: appDelegate.persistentContainer.viewContext)
         
         if let zoneID = synchronizer?.modelAdapters.first?.recordZoneID {
             synchronizer?.subscribeForChanges(in: zoneID) { (error) in
